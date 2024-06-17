@@ -13,7 +13,7 @@ export function verifyToken(req, res, next) {
     if (err)
       return res.status(403).json({ error: "Access denied, invalid token" });
     req.user = decoded;
-    res.json(req.user);
+    next();
   });
 }
 
